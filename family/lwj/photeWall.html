@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>卢文进的·照片墙</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body{background-color: #1E1E1E}
+			#ul{
+				position: relative;
+			}
+			#ul li{
+				vertical-align:top;
+	
+				position: absolute;
+				transition: all 1s;
+			}
+			#ul li img{
+    box-shadow: 0 0 5px rgba(105,105,105,0.49);
+    -webkit-box-shadow: 0 0 5px rgba(105,105,105,0.49);
+			}
+			#ul li.checked{
+				left: 50% !important;
+				top: 300px !important;
+				transform: rotate(0deg) translate(-50%,-50%) scale(2.5,2.5) !important;
+				z-index: 99 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul"></ul>
+		<script type="text/javascript">
+			window.addEventListener('load',function(){
+				//获取事件源
+				var ul = document.getElementById('ul');
+				//获取图片可活动区域
+				var windowW = document.documentElement.clientWidth - 340;
+				var windowH = document.documentElement.clientHeight - 191;
+				//循环遍历
+				for(var i=1;i<12;i++){
+					//创建li标签
+					var li = document.createElement('li');
+					//追加到ul的子元素
+					ul.appendChild(li);
+					//创建img标签
+					var img = document.createElement('img');
+					li.appendChild(img);
+					// 动态插入图片
+					img.setAttribute('src','img/'+i+'.jpg');
+
+				}
+				//获取所有的li 
+				var allLi = ul.children;
+				//遍历
+				for(var j=0;j<allLi.length;j++){
+					//取出单个li
+					var li = allLi[j];
+					//随机获取位置
+					li.style.left = parseInt(Math.random() * windowW) + 'px';
+					li.style.top = parseInt(Math.random() * windowH) + 'px';
+					//获取随机角度
+					li.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+					//监听点击事件
+					li.addEventListener('click',function(){
+						for(var i=0;i<allLi.length;i++){
+							allLi[i].className = '';
+						}
+						this.className = 'checked';
+					});
+				}
+			})
+		</script>
+	</body>
+</html>

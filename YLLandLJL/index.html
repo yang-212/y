@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>旋转相册 v1.0</title>
+
+		<!-- <link rel="stylesheet" href="css/style.css"> -->
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+			}
+
+			body {
+				overflow: hidden;
+				display: flex;
+				background: #111;
+				perspective: 1000px;
+				transform-style: preserve-3d;
+			}
+
+			#drag-container,
+			#spin-container {
+				position: relative;
+				display: flex;
+				margin: auto;
+				transform-style: preserve-3d;
+				transform: rotateX(-10deg);
+			}
+
+			#drag-container img,
+			#drag-container video {
+				transform-style: preserve-3d;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				line-height: 200px;
+				font-size: 50px;
+				text-align: center;
+				box-shadow: 0 0 8px #fff;
+				-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+			}
+
+			#drag-container img:hover,
+			#drag-container video:hover {
+				box-shadow: 0 0 15px #fffd;
+				-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+			}
+
+			#drag-container p {
+				font-family: Serif;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotateX(90deg);
+				color: #fff;
+			}
+
+			#ground {
+				width: 900px;
+				height: 900px;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotateX(90deg);
+				background: -webkit-radial-gradient(center center, farthest-side, #9993, transparent);
+			}
+
+
+			#carousel-container {
+				width: 100%;
+				height: 100%;
+			}
+
+			@keyframes spin {
+				from {
+					transform: rotateY(0deg);
+				}
+
+				to {
+					transform: rotateY(360deg);
+				}
+			}
+
+			@keyframes spinRevert {
+				from {
+					transform: rotateY(360deg);
+				}
+
+				to {
+					transform: rotateY(0deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="drag-container">
+			<div id="spin-container">
+
+				<img src="img/1.jpg" alt="">
+				<img src="img/2.jpg" alt="">
+				<img src="img/3.jpg" alt="">
+				<img src="img/4.jpg" alt="">
+				<img src="img/5.jpg" alt="">
+				<img src="img/6.jpg" alt="">
+				<img src="img/7.jpg" alt="">
+				<img src="img/8.jpg" alt="">
+				<img src="img/9.jpg" alt="">
+				<img src="img/10.jpg" alt="">
+<!-- 				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/1.jpg" alt=""> -->
+
+
+				<!-- <a target="_blank" href="img/pexels-photo-139829.jpeg">
+					<img src="img/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+				</a>
+
+				<video controls autoplay="autoplay" loop>
+					<source
+						src="https://blz-videos.nosdn.127.net/1/OverWatch/OVR_D.VA_SHOOTING_STAR_zhCN_YT_PC_3.mp4?s=338c48ac2dfcb1d4c0689968b5baf94eee6ca0c1&profile_id=165&oauth2_token_id=57447761"
+						type="video/mp4">
+				</video> -->
+
+				<!-- Dòng chữ ở giữa vòng xoay -->
+				<p>杨林林&卢建磊</p>
+			</div>
+			<div id="ground"></div>
+		</div>
+
+		<script type="text/javascript" src="js/script.js"></script>
+
+	</body>
+</html>
