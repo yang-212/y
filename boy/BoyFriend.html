@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>婷婷男朋友</h1>
+		<h3><a href="#" id="hisHeight" style="display: none;">185cm</a> <a href="#" id="hisWeight"
+				style="display: none;">65kg</a> <a href="#" id="hisAppearance" style="display: none;">阳光 帅气</a></h3>
+		<button onclick="hisHeight()">点击查看身高</button>
+		<button onclick="hisWeight()">点击查看体重</button>
+		<button onclick="hisAppearance()">点击查看外观</button>
+		<hr />
+		<button onclick="walk()">1</button>
+		<button onclick="eat()">2</button>
+		<button onclick="sleep()">3</button>
+	</body>
+	<script>
+		function hisHeight() {
+			var hisHeight = document.getElementById("hisHeight");
+			hisHeight.style.display = "block";
+			alert("身高185cm！");
+		}
+
+		function hisWeight() {
+			var hisHeight = document.getElementById("hisWeight");
+			hisHeight.style.display = "block";
+			alert("体重65KG！");
+		}
+
+		function hisAppearance() {
+			var hisHeight = document.getElementById("hisAppearance");
+			hisHeight.style.display = "block";
+			alert("阳光！帅气！");
+		}
+
+		function walk() {
+			alert("婷婷和男朋友在散步！");
+		}
+
+		function eat() {
+			alert("婷婷男朋友在吃饭！");
+		}
+		
+		function sleep() {
+			alert("婷婷男朋友在睡觉！");
+		}
+	</script>
+</html>
