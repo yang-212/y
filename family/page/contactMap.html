@@ -24,7 +24,7 @@
 			var map = new AMap.Map('container', {
 				resizeEnable: true,
 				zoom: 12,
-				center: [115.125213110981, 33.29143476978419]
+				center: [115.23172437334051, 33.25649790477632]
 			});
 			AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.OverView', 'AMap.Geolocation', 'AMap.Weather'], function() {
 				map.addControl(new AMap.ToolBar());
@@ -62,6 +62,15 @@
 			});
 			
 			map.add(marker2);
+			
+			var marker3 = new AMap.Marker({
+			    position: new AMap.LngLat(115.27949532325613,33.197574429782904),
+			    offset: new AMap.Pixel(-10, -10),
+			    icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
+			    title: '梦宇家'
+			});
+			
+			map.add(marker3);
 		</script>
 		<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
 	</body>
